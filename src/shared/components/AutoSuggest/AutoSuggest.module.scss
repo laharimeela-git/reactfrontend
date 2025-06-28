@@ -1,0 +1,42 @@
+.auto-suggest-container {
+  position: relative;
+  width: 100%;
+}
+
+.suggest-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  border: 1px solid #ddd;
+  background: #fff;
+  max-height: 250px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    &.highlight {
+      background: #f0f0f0;
+    }
+  }
+
+  .loading {
+    padding: 10px;
+    text-align: center;
+  }
+}

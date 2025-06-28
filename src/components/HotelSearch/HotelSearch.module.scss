@@ -1,0 +1,183 @@
+.hotelSearch {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .welcomeSection {
+    text-align: center;
+    margin-bottom: 10px;
+
+    .welcomeText {
+      color: #ffffff;
+      font-size: 18px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+  }
+
+  .searchSection {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    form.hotelSearchForm {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-end;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+
+        label {
+          font-size: 13px;
+          font-weight: 500;
+          color: #444;
+          margin-bottom: 4px;
+          padding-left: 5px;
+        }
+
+        input {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 14px;
+        }
+      }
+
+      .autoSuggest {
+        flex: 2.5;
+        min-width: 280px;
+      }
+
+      .searchBtn {
+        height: 50px;
+        padding: 0 28px;
+        background: linear-gradient(135deg, #ea7909 0%, #da7c1e 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        min-width: 150px;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 20px rgba(236, 141, 46, 0.3);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      .travellersContainer {
+        position: absolute;
+        margin-top: 4px;
+        top: 100%;
+        left: 0;
+        width: 260px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 12px;
+        z-index: 1000;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .travellerGroup {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        label {
+          font-weight: 500;
+        }
+
+        .counter {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          button {
+            width: 32px;
+            height: 32px;
+            font-size: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #eee;
+            cursor: pointer;
+          }
+
+          span {
+            width: 24px;
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .doneBtn {
+        align-self: flex-end;
+        padding: 8px 20px;
+        background-color: #ec9407;
+        border: none;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1200px) {
+    .searchSection {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .searchSection form.hotelSearchForm {
+      flex-direction: column;
+      gap: 15px;
+
+      .searchBtn {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .welcomeSection .welcomeText {
+      font-size: 16px;
+    }
+
+    .searchSection form.hotelSearchForm {
+      label {
+        font-size: 12px;
+      }
+
+      input {
+        height: 45px;
+        font-size: 15px;
+      }
+
+      .searchBtn {
+        height: 45px;
+        font-size: 15px;
+      }
+    }
+  }
+}
