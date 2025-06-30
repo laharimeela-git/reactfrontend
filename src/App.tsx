@@ -13,6 +13,7 @@ const AppRoutes = () => (
       <Route path="/flights" component={FlightSearch} />
       <Route path="/hotels" component={HotelSearch} />
       <Route path="/buses" component={BusSearch}/>
+
     </Switch>
   </BrowserRouter>
 );
