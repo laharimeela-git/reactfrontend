@@ -1,22 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import FlightSearch from './components/FlightSearch/FlightSearch.tsx';
-import HotelSearch from './components/HotelSearch/HotelSearch.tsx';
-import BusSearch from './components/BusSearch/BusSearch.tsx';
+import FlightSearch from './components/FlightSearch/FlightSearch';
+import HotelSearch from './components/HotelSearch/HotelSearch';
+import BusSearch from './components/BusSearch/BusSearch';
 
-const AppRoutes: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HotelSearch />} />
-        <Route path="/hotel-search" element={<HotelSearch />} />
-        <Route path="/bus-search" element={<BusSearch />} />
-
-        <Route path="/flight-search" element={<FlightSearch title="Search Flights" />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+const AppRoutes = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/flights" component={FlightSearch} />
+      <Route path="/hotels" component={HotelSearch} />
+      <Route path="/buses" component={BusSearch} />
+    </Switch>
+  </BrowserRouter>
+);
 
 export default AppRoutes;
